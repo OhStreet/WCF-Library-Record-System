@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusBookingSystemJS", "CampusBookingSystemJS\CampusBookingSystemJS.csproj", "{A65A3185-B34C-463E-B2EC-3447FF7512CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryConsole", "LibraryConsole\LibraryConsole.csproj", "{EF1BE6F9-68EF-449C-8964-3C78053663BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A65A3185-B34C-463E-B2EC-3447FF7512CA} = {A65A3185-B34C-463E-B2EC-3447FF7512CA}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A65A3185-B34C-463E-B2EC-3447FF7512CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65A3185-B34C-463E-B2EC-3447FF7512CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65A3185-B34C-463E-B2EC-3447FF7512CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65A3185-B34C-463E-B2EC-3447FF7512CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF1BE6F9-68EF-449C-8964-3C78053663BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1BE6F9-68EF-449C-8964-3C78053663BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1BE6F9-68EF-449C-8964-3C78053663BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF1BE6F9-68EF-449C-8964-3C78053663BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27F0ED11-BF61-42B0-BD42-C7D86A513595}
+	EndGlobalSection
+EndGlobal

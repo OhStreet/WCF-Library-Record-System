@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" />
+      <xs:element name="AddBook">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" minOccurs="0" name="book" nillable="true" type="q1:Book" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddBookResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateBook">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" minOccurs="0" name="book" nillable="true" type="q2:Book" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateBookResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteBook">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="bookID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteBookResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBook">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="bookID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBookResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" minOccurs="0" name="GetBookResult" nillable="true" type="q3:Book" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllBooks">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllBooksResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" minOccurs="0" name="GetAllBooksResult" nillable="true" type="q4:ArrayOfBook" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SearchByTitle">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SearchByTitleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" minOccurs="0" name="SearchByTitleResult" nillable="true" type="q5:ArrayOfBook" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SearchByAuthor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="author" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SearchByAuthorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" minOccurs="0" name="SearchByAuthorResult" nillable="true" type="q6:ArrayOfBook" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SearchByISBN">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="isbn" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SearchByISBNResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" minOccurs="0" name="SearchByISBNResult" nillable="true" type="q7:Book" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckBookAvailability">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="bookID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckBookAvailabilityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CheckBookAvailabilityResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckOutBook">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="bookID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckOutBookResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReturnBook">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="bookID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReturnBookResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CampusBookingSystemJS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Book">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookID" type="xs:int" />
+          <xs:element minOccurs="0" name="ISBN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Book" nillable="true" type="tns:Book" />
+      <xs:complexType name="ArrayOfBook">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Book" nillable="true" type="tns:Book" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfBook" nillable="true" type="tns:ArrayOfBook" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_AddBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBooks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchByTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByTitle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchByTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchByAuthor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchByAuthor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchByISBN_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByISBN" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchByISBN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByISBNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckBookAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckBookAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckBookAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckBookAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckOutBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutBook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckOutBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnBook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnBookResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="AddBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddBook" message="tns:IService1_AddBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddBookResponse" message="tns:IService1_AddBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateBook" message="tns:IService1_UpdateBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateBookResponse" message="tns:IService1_UpdateBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteBook" message="tns:IService1_DeleteBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteBookResponse" message="tns:IService1_DeleteBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBook" message="tns:IService1_GetBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBookResponse" message="tns:IService1_GetBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllBooks" message="tns:IService1_GetAllBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllBooksResponse" message="tns:IService1_GetAllBooks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchByTitle" message="tns:IService1_SearchByTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchByTitleResponse" message="tns:IService1_SearchByTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByAuthor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchByAuthor" message="tns:IService1_SearchByAuthor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchByAuthorResponse" message="tns:IService1_SearchByAuthor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByISBN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchByISBN" message="tns:IService1_SearchByISBN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchByISBNResponse" message="tns:IService1_SearchByISBN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckBookAvailability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckBookAvailability" message="tns:IService1_CheckBookAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckBookAvailabilityResponse" message="tns:IService1_CheckBookAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckOutBook" message="tns:IService1_CheckOutBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckOutBookResponse" message="tns:IService1_CheckOutBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReturnBook" message="tns:IService1_ReturnBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReturnBookResponse" message="tns:IService1_ReturnBook_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddBook">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBook">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooks">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByTitle">
+      <soap:operation soapAction="http://tempuri.org/IService1/SearchByTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByAuthor">
+      <soap:operation soapAction="http://tempuri.org/IService1/SearchByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByISBN">
+      <soap:operation soapAction="http://tempuri.org/IService1/SearchByISBN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBookAvailability">
+      <soap:operation soapAction="http://tempuri.org/IService1/CheckBookAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutBook">
+      <soap:operation soapAction="http://tempuri.org/IService1/CheckOutBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBook">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReturnBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:61425/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,7 @@
+C:\Users\jared.street\source\repos\CampusBookingSystemJS\LibraryConsole\bin\Debug\LibraryConsole.exe.config
+C:\Users\jared.street\source\repos\CampusBookingSystemJS\LibraryConsole\bin\Debug\LibraryConsole.exe
+C:\Users\jared.street\source\repos\CampusBookingSystemJS\LibraryConsole\bin\Debug\LibraryConsole.pdb
+C:\Users\jared.street\source\repos\CampusBookingSystemJS\LibraryConsole\obj\Debug\LibraryConsole.csproj.AssemblyReference.cache
+C:\Users\jared.street\source\repos\CampusBookingSystemJS\LibraryConsole\obj\Debug\LibraryConsole.csproj.CoreCompileInputs.cache
+C:\Users\jared.street\source\repos\CampusBookingSystemJS\LibraryConsole\obj\Debug\LibraryConsole.exe
+C:\Users\jared.street\source\repos\CampusBookingSystemJS\LibraryConsole\obj\Debug\LibraryConsole.pdb
