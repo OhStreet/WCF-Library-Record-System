@@ -8,14 +8,6 @@ This project demonstrates how a WCF service defines operations, exposes a data c
 
 The service manages an in-memory collection of books. Each book has an ID, title, author, ISBN, and availability status. The console client provides a menu-driven interface for calling the service operations and handling service errors.
 
-Screenshot suggestions to add later:
-
-* WCF service page running in the browser
-* Console client menu
-* Example of adding a book and listing all books
-* Example of checking out or returning a book
-* Visual Studio service reference / connected service view
-
 ## Tech Stack
 
 * C#
