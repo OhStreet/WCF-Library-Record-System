@@ -1,0 +1,33 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Compiled files
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# Generated file lists
+*.FileListAbsolute.txt
+*.AssemblyReference.cache
+*.CoreCompileInputs.cache
+
+# NuGet packages, if used
+packages/
+*.nupkg
+
+# OS junk
+.DS_Store
+Thumbs.db
